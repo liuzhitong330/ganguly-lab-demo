@@ -10,8 +10,8 @@ from pathlib import Path
 
 OUT = Path(__file__).parent
 
-STRUCTURES = ["Motor_ctx","PFC","Striatum","Thalamus","Hippocampus","Subst_nigra","Brainstem"]
-STRUCT_LABELS = ["Motor\ncortex","PFC","Striatum","Thalamus","Hippocampus","Subst.\nnigra","Brainstem"]
+STRUCTURES = ["Motor_ctx","PFC","Striatum","Thalamus","Hippocampus","Subst_nigra","Midbrain"]
+STRUCT_LABELS = ["Motor\ncortex","PFC","Striatum","Thalamus","Hippocampus","Subst.\nnigra","Midbrain"]
 
 GROUPS = [
     ("sleep spindle / oscillation", ["Cacna1g","Cacna1h","Hcn1","Kcnq2"],  "#2980b9"),
