@@ -44,7 +44,7 @@ STRUCTURES = {
     "Thalamus":    549,
     "Hippocampus": 1089,
     "Subst_nigra": 374,
-    "Brainstem":   313,
+    "Midbrain":    313,
 }
 
 def get_dataset(gene):
