@@ -1,4 +1,4 @@
-gene	group	dataset_id	Motor_ctx	PFC	Striatum	Thalamus	Hippocampus	Subst_nigra	Brainstem
+gene	group	dataset_id	Motor_ctx	PFC	Striatum	Thalamus	Hippocampus	Subst_nigra	Midbrain
 Cacna1g	spindle_osc	68843793	8.0419	7.8315	1.0542	13.2078	5.2502	6.6864	6.5842
 Cacna1h	spindle_osc	69236909	7.4961	5.7376	11.108	4.9003	10.6039	5.0755	5.1296
 Hcn1	spindle_osc	74579938	7.1023	4.3289	0.8798	0.6025	5.9404	1.0573	2.1233
