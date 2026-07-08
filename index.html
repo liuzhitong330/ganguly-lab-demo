@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Motor Learning &amp; Sleep Consolidation Circuits — Cathy Liu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { font-family: Georgia, serif; max-width: 720px; margin: 0 auto;
+         padding: 2.5rem 1.5rem 4rem; line-height: 1.65; color: #222; background: #fff; }
+  h1, h2, h3 { font-family: -apple-system, system-ui, sans-serif; }
+  h1 { font-size: 1.45rem; margin-bottom: .2rem; }
+  .byline { font-family: system-ui, sans-serif; font-size: .85rem; color: #777; margin-bottom: 2rem; }
+  h2 { font-size: 1.1rem; margin-top: 2.5rem; border-bottom: 1px solid #eee; padding-bottom: .3rem; }
+  .note { background: #f6f6f4; border-left: 3px solid #999; padding: .8rem 1rem;
+          font-family: system-ui, sans-serif; font-size: .85rem; color: #444; margin: 1.2rem 0; }
+  figure { margin: 1.2rem 0; }
+  figure img { max-width: 100%; display: block; }
+  figcaption { font-family: system-ui, sans-serif; font-size: .78rem; color: #777; margin-top: .4rem; }
+  .code-wrap { overflow-x: auto; margin: 1rem 0; }
+  pre { white-space: pre; background: #f8f8f8; padding: 1rem; font-size: .8rem;
+        border-left: 3px solid #ddd; font-family: ui-monospace, Menlo, monospace; }
+  table { border-collapse: collapse; width: 100%; font-size: .88rem; margin: 1rem 0;
+          font-family: system-ui, sans-serif; }
+  td, th { padding: .4rem .7rem; border-bottom: 1px solid #eee; text-align: left; }
+  th { font-weight: 600; color: #555; }
+  a { color: #2255aa; }
+  .meta { font-family: system-ui, sans-serif; font-size: .8rem; color: #888;
+          margin-top: 3rem; border-top: 1px solid #eee; padding-top: 1rem; }
+  .tag { display: inline-block; font-family: system-ui, sans-serif; font-size: .75rem;
+         background: #eef2f8; color: #2255aa; padding: .15rem .5rem;
+         border-radius: 3px; margin-right: .3rem; }
+  .highlight  { background: #f0f8ff; border-left: 3px solid #2980b9; padding: .6rem 1rem;
+                font-family: system-ui, sans-serif; font-size: .88rem; margin: 1rem 0; }
+  .highlight2 { background: #fff5f5; border-left: 3px solid #c0392b; padding: .6rem 1rem;
+                font-family: system-ui, sans-serif; font-size: .88rem; margin: 1rem 0; }
+  .highlight3 { background: #f5fff0; border-left: 3px solid #27ae60; padding: .6rem 1rem;
+                font-family: system-ui, sans-serif; font-size: .88rem; margin: 1rem 0; }
+</style>
+</head>
+<body>
+
+<h1>Thalamocortical Spindles, Corticostriatal Reversal, and GABA — The Circuit Substrate of Motor Consolidation</h1>
+<div class="byline">Cathy Liu · cathyliu014@gmail.com · personal exploratory project, July 2026</div>
+
+<span class="tag">motor learning</span>
+<span class="tag">sleep consolidation</span>
+<span class="tag">thalamocortical spindles</span>
+<span class="tag">corticostriatal</span>
+<span class="tag">GABA</span>
+<span class="tag">stroke recovery</span>
+<span class="tag">Allen Brain Atlas</span>
+<span class="tag">Python</span>
+
+<p style="margin-top:1.2rem">
+The <a href="https://www.gangulylab.org/" target="_blank">Ganguly lab</a> has established
+three interlinked circuit-level findings that I find compelling to think about together:
+sleep spindles coupled to slow oscillations drive motor memory consolidation; the direction
+of information flow between motor cortex and striatum reverses as skills become consolidated;
+and GABAergic signaling — disrupted by stroke — is required for the spindle-slow oscillation
+coupling that supports recovery. These three findings implicate three overlapping circuits:
+thalamocortical, corticostriatal, and local GABAergic networks in motor and prefrontal cortex.
+</p>
+
+<p>
+I mapped the expression of genes encoding the key molecular players in each of these circuits
+across brain regions using the <a href="https://mouse.brain-map.org/" target="_blank">Allen
+Mouse Brain Atlas</a>, asking where the molecular substrates for each circuit are concentrated
+and how they overlap.
+</p>
+
+<div class="note">
+<strong>What this is.</strong> Personal exploratory analysis, not novel research.
+Data from the Allen Mouse Brain Atlas (Allen Institute for Brain Science, 2004),
+via the public RMA API. ISH expression energy is a bulk regional average.
+The gene-to-circuit mapping reflects established literature on each protein's function.
+</div>
+
+<h2>Regional landscape — all three circuits</h2>
+
+<figure>
+  <img src="circuit_heatmap.svg?v=1"
+       alt="Heatmap of spindle, GABA, and corticostriatal genes across 7 brain regions">
+  <figcaption>ISH expression energy (row-normalized per gene) for 12 circuit genes across
+  7 brain regions. Thalamus (blue) = spindle pacemaker. Motor cortex (orange) = slow-oscillation
+  generator and recipient. Striatum (green) = corticostriatal learning node.
+  Raw values annotated where expression is notably high.</figcaption>
+</figure>
+
+<h2>Three circuits in detail</h2>
+
+<figure>
+  <img src="circuit_bars.svg?v=1"
+       alt="Three-panel bar chart for thalamocortical, corticostriatal, and GABAergic circuits">
+  <figcaption>Raw ISH expression energy for key genes in each circuit, shown in the region
+  where each gene is highest. Left: thalamocortical spindle genes (Cacna1g/Cav3.1 in thalamus,
+  Hcn1 in motor cortex). Center: corticostriatal genes (Slc17a7/VGLUT1 in PFC; Drd1/Foxp1
+  in striatum). Right: GABAergic interneuron genes (Gad1/Gad2 in striatum; Pvalb in motor
+  cortex; Sst in PFC).</figcaption>
+</figure>
+
+<div class="highlight">
+<strong>Thalamic Cacna1g (13.2) and motor cortex Hcn1 (7.1) anchor the spindle circuit.</strong>
+Cav3.1 (Cacna1g) T-type Ca2+ channels in the thalamic reticular nucleus generate the 12–15 Hz
+spindle bursts. Hcn1 (Ih current) in layer 5 motor cortex neurons sets the membrane time
+constant that determines how cortical neurons respond to thalamocortical spindle input —
+and how they rebound into the next slow oscillation cycle. The lab's finding that spindle
+coupling to slow oscillations is specifically disrupted by stroke, and that recovery of this
+coupling correlates with functional gains, maps directly onto this Cacna1g → Hcn1 axis:
+stroke presumably disrupts the thalamocortical interface, not the thalamic spindle generator
+itself, which would predict that interventions targeting Hcn1-mediated cortical rebound
+excitability could rescue consolidation.
+</div>
+
+<div class="highlight3">
+<strong>Slc17a7 (VGLUT1) massive in PFC (37.6) and Drd1/Foxp1 concentrated in striatum (21.5 / 14.7).</strong>
+The corticostriatal projection — PFC glutamatergic axons (VGLUT1) synapsing on D1-expressing
+striatal MSNs (Foxp1+) — is the anatomical substrate for the information-flow reversal the lab
+identified in motor learning (<em>Current Biology</em> 2024). During early exploratory learning,
+information flows cortex → striatum (credit assignment to motor actions). As skills consolidate,
+the dominant flow reverses — striatal activity predicts cortical dynamics. The asymmetric
+expression of VGLUT1 in PFC vs DRD1/FOXP1 in striatum reflects the two ends of this
+directional loop, and the D1/D2 ratio (21.5 vs 10.9) suggests the direct pathway has a
+2:1 expression advantage at this stage — consistent with reward-based consolidation favoring
+the direct pathway.
+</div>
+
+<div class="highlight2">
+<strong>Gad1/Gad2 peak in striatum (13.4/14.6); Pvalb in motor cortex and brainstem; Sst in PFC.</strong>
+The lab's stroke-consolidation work showed that GABAergic signaling is specifically required
+for the recovery of spindle-slow oscillation coupling. Three GABAergic subpopulations
+are implicated in different layers of this: (1) striatal MSNs (Gad1/Gad2-expressing)
+gate corticostriatal output, (2) parvalbumin interneurons (Pvalb, high in motor cortex)
+generate the cortical gamma oscillations that nest within spindles, and (3) SST interneurons
+(Sst, high in PFC) modulate slow oscillation up-states. Each population is a candidate
+for why GABAergic disruption after stroke impairs the coordination across all three
+timescales simultaneously.
+</div>
+
+<h2>Why this connects to the lab's work</h2>
+<ul>
+<li>
+<strong>Motor learning and sleep:</strong> The thalamocortical spindle circuit (Cacna1g → Hcn1)
+and the corticostriatal reversal circuit (VGLUT1 → DRD1) are the two biological systems
+underlying the lab's main experimental questions. I'd like to contribute to experiments
+that manipulate these specific molecular nodes — optogenetically, pharmacologically, or
+via targeted stimulation — to test causal roles during sleep-dependent consolidation.
+</li>
+<li>
+<strong>Stroke recovery:</strong> The GABAergic subpopulation map (PV, SST, striatal GAD1/2)
+suggests specific targets for restoring consolidation after stroke. I'm interested in
+contributing to the analysis of multi-area LFP recordings and to experiments that test
+whether restoring specific GABA subtype function accelerates recovery.
+</li>
+<li>
+<strong>BCIs:</strong> The stability of neuroprosthetic control resembles natural skill
+consolidation, and the lab has shown that the same thalamocortical coupling dynamics are
+involved. I want to contribute to the neural data analysis pipeline for understanding
+how motor cortex representations stabilize during long-term BCI use.
+</li>
+<li>
+My background spans wet lab molecular and cell biology and computational analysis of
+neural data. I think my combination of practical lab experience and computational background
+is where I can be most useful to your lab.
+</li>
+</ul>
+
+<h2>Methods</h2>
+<p>
+Data retrieved July 2026. Allen Mouse Brain Atlas (Allen Institute for Brain Science, 2004),
+in situ hybridization, adult mouse (P56), via RMA API at
+<code>api.brain-map.org/api/v2/data/query.json</code>.
+Structures: Primary motor cortex / MOp (985), Anterior cingulate area / PFC (31),
+Striatum / Caudoputamen (672), Thalamus (549), Hippocampus (1089),
+Substantia nigra (374), Brainstem (313).
+Expression metric: <em>expression_energy</em> from StructureUnionize (sagittal ISH preferred).
+Figures: pure Python SVG.
+Code: <a href="fetch_data.py">fetch_data.py</a>, <a href="make_figures.py">make_figures.py</a>.
+Raw data: <a href="expression.tsv">expression.tsv</a>.
+</p>
+
+<div class="meta">
+Cathy Liu — cathyliu014@gmail.com | 415-216-3799<br>
+<a href="https://liuzhitong330.github.io/tvb-llm-robust-neurostim/" target="_blank">Epilepsy neurostimulation project</a> ·
+<a href="https://arxiv.org/abs/2606.04339" target="_blank">arXiv:2606.04339</a>
+</div>
+
+</body>
+</html>
